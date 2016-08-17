@@ -20,8 +20,8 @@ var invalidPuzzle = [[ 8,4,5,7,4,4,1,3,6 ],
 
 
 /////////////////////////////
-/// 	PROGRAM 		///////////
-////////////////////////////
+/// 	PROGRAM 		/////
+/////////////////////////////
 
 function getRow (board, n) {
 	return board[n-1];
@@ -58,13 +58,13 @@ function getAllGrids(board) {
 }
 
 function flattenGrid(grid) {
-		var flattenedGrid = [];
-		for(var i = 0; i < 3; i++) {
-			for(var j = 0; j < 3; j++) {
-				flattenedGrid.push(grid[i][j]);
-			}
+	var flattenedGrid = [];
+	for(var i = 0; i < 3; i++) {
+		for(var j = 0; j < 3; j++) {
+			flattenedGrid.push(grid[i][j]);
 		}
-		return checkNumbers(flattenedGrid);
+	}
+	return checkNumbers(flattenedGrid);
 }
 
 function checkNumbers(arr) {
@@ -93,20 +93,20 @@ function checkRowsAndCols (board) {
 
 function checkGrids (board) {
 	// check to see if each grid only contains numbers 1-9 //
-		var gridsToCheck = getAllGrids(board);
-		for(var k = 0; k < gridsToCheck.length; k++) {
-			if(!flattenGrid(gridsToCheck[k])) {
-				return false;
-			}
+	var gridsToCheck = getAllGrids(board);
+	for(var k = 0; k < gridsToCheck.length; k++) {
+		if(!flattenGrid(gridsToCheck[k])) {
+			return false;
 		}
-		return true;
+	}
+	return true;
 }
 
 function checkBoard(board) {
-		if (checkRowsAndCols(board) && checkGrids(board)) {
-			return true;
-		}
-		return false;
+	if (checkRowsAndCols(board) && checkGrids(board)) {
+		return true;
+	}
+	return false;
 }
     
 console.log(checkBoard(validPuzzle)); //--> true
