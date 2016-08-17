@@ -114,4 +114,3 @@ function checkBoard(board) {
 console.log(checkBoard(validPuzzle)); //--> true
 console.log(checkBoard(invalidPuzzle)); //--> false
 
-
